@@ -6,8 +6,8 @@ function App() {
   const [response, setResponse] = useState({});
   const [inputs, setInputs] = useState({
     category: "One Way",
-    driverId: 341,
-    tripName: "Trip for akshay",
+    driverId: 347,
+    tripName: "Trip",
     startOdometer: false,
     endOdometer: false,
     startMeterReading: false,
@@ -78,8 +78,8 @@ function App() {
           id="category"
           onChange={(e) => setInputs({ ...inputs, category: e.target.value })}
         >
-          <option value="Round">Round</option>
           <option value="One Way">One Way</option>
+          <option value="Round">Round</option>
         </select>
         <br />
         <br />
@@ -340,8 +340,8 @@ function App() {
           Submit
         </button>{" "}
       </div>
-      <ReactJson src={response} />
       <ReactJson src={post} />
+      <ReactJson src={response} />
     </div>
   );
 }
