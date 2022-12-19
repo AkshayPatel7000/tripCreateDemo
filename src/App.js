@@ -88,7 +88,7 @@ function App() {
         <select
           name="vehicleId"
           id="vehicleId"
-          onChange={(e) => setInputs({ ...inputs, category: e.target.value })}
+          onChange={(e) => setInputs({ ...inputs, vehicleId: e.target.value })}
         >
           <option value="35">35</option>
           <option value="46">46</option>
