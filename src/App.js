@@ -14,6 +14,7 @@ function App() {
     endMeterReading: false,
     applyForRecurring: false,
     isRecurring: false,
+    vehicleId: 35,
   });
 
   const [dateTime, setDateTime] = useState({
@@ -50,7 +51,7 @@ function App() {
     isRecurring: inputs.isRecurring,
     orgId: 1,
     status: "Not Started",
-    vehicleId: 35,
+    vehicleId: inputs.vehicleId,
     endMeterReading: inputs.endMeterReading,
     endOdometer: inputs.endOdometer,
     endSelfie: false,
@@ -80,6 +81,20 @@ function App() {
         >
           <option value="One Way">One Way</option>
           <option value="Round">Round</option>
+        </select>
+        <br />
+        <br />
+        <label htmlFor="">category</label>
+        <select
+          name="vehicleId"
+          id="vehicleId"
+          onChange={(e) => setInputs({ ...inputs, category: e.target.value })}
+        >
+          <option value="35">35</option>
+          <option value="46">46</option>
+          <option value="9556">9556</option>
+          <option value="9557">9557</option>
+          <option value="9558">9558</option>
         </select>
         <br />
         <br />
