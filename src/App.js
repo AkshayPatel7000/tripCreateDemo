@@ -44,9 +44,7 @@ function App() {
     tripName: inputs.tripName + moment().format("YYYY-MM-DD"),
 
     applyForRecurring: inputs.applyForRecurring,
-    baseEndLong: 77.4126,
-    baseStartLat: 22.7196,
-    baseStartLong: 75.8577,
+
     isEnabled: true,
     isRecurring: inputs.isRecurring,
     orgId: 1,
@@ -58,7 +56,6 @@ function App() {
     startMeterReading: inputs.startMeterReading,
     startOdometer: inputs.startOdometer,
     startSelfie: false,
-    baseEndLat: 23.2599,
   };
   const SubmitFunc = async () => {
     let response = await fetch("http://13.233.175.113:11014/trips/save-trip", {
@@ -84,18 +81,14 @@ function App() {
         </select>
         <br />
         <br />
-        <label htmlFor="">category</label>
-        <select
+        <label htmlFor="">Vehicle Id</label>
+        <input
+          type={"text"}
           name="vehicleId"
           id="vehicleId"
+          value={inputs.vehicleId}
           onChange={(e) => setInputs({ ...inputs, vehicleId: e.target.value })}
-        >
-          <option value="35">35</option>
-          <option value="46">46</option>
-          <option value="9556">9556</option>
-          <option value="9557">9557</option>
-          <option value="9558">9558</option>
-        </select>
+        />
         <br />
         <br />
         <label htmlFor="">driverId</label>
@@ -116,7 +109,7 @@ function App() {
         <br />
         <label htmlFor="">onwardStartDate</label>
         <input
-          type="datetime-local"
+          type="date"
           name=""
           id="onwardStartDate"
           className="form-control"
@@ -149,7 +142,7 @@ function App() {
         <br />
         <label htmlFor="">onwardEndDate</label>
         <input
-          type="datetime-local"
+          type="date"
           name=""
           id="onwardEndDate"
           className="form-control"
@@ -258,62 +251,6 @@ function App() {
               endDate: moment(e.target.value, "YYYY-MM-DD").format(
                 "YYYY-MM-DD"
               ),
-            });
-          }}
-        />
-        <br />
-        <br />
-        <label htmlFor="">Start ODO Reading</label>
-        <input
-          type={"checkbox"}
-          name="startODO"
-          className="form-control"
-          onChange={(e) => {
-            setInputs({
-              ...inputs,
-              startOdometer: !inputs.startOdometer,
-            });
-          }}
-        />
-        <br />
-        <br />
-        <label htmlFor="">End ODO Reading</label>
-        <input
-          type={"checkbox"}
-          name="startODO"
-          className="form-control"
-          onChange={(e) => {
-            setInputs({
-              ...inputs,
-              endOdometer: !inputs.endOdometer,
-            });
-          }}
-        />
-        <br />
-        <br />
-        <label htmlFor="">startMeterReading</label>
-        <input
-          type={"checkbox"}
-          name="startMeterReading"
-          className="form-control"
-          onChange={(e) => {
-            setInputs({
-              ...inputs,
-              startMeterReading: !inputs.startMeterReading,
-            });
-          }}
-        />
-        <br />
-        <br />
-        <label htmlFor="">EndMeterReading</label>
-        <input
-          type={"checkbox"}
-          name="endMeterReading"
-          className="form-control"
-          onChange={(e) => {
-            setInputs({
-              ...inputs,
-              endMeterReading: !inputs.endMeterReading,
             });
           }}
         />
